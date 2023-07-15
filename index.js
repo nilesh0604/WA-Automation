@@ -4,6 +4,7 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const client = new Client({authStrategy: new LocalAuth()});
 
 client.on('qr', (qr) => {
+	console.log(typeof qr, qr);
 	qrcode.generate(qr, {small: true})
 });
 
